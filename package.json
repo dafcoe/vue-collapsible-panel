@@ -1,10 +1,37 @@
 {
-  "name": "vue-collapsible-panel",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@dafcoe/vue-collapsible-panel",
+  "version": "0.1.22",
+  "description": "Collapsible Panel / Accordion Using Vue3",
+  "keywords": [
+    "collapsible panel",
+    "accordion",
+    "vue",
+    "vue3",
+    "javascript"
+  ],
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/dafcoe/vue-collapsible-panel/issues",
+    "email": "dafcoe+vcp@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Daf Coe",
+    "email": "dafcoe@gmail.com"
+  },
+  "files": ["dist/*"],
+  "main": "dist/vue-collapsible-panel.common.js",
+  "module": "dist/vue-collapsible-panel.common.js",
+  "unpkg": "dist/vue-collapsible-panel.umd.min.js",
+  "css": "dist/vue-collapsible-panel.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dafcoe/vue-collapsible-panel"
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:dev": "vue-cli-service serve",
+    "build:prod": "vue-cli-service build",
+    "build:lib": "rm -rf dist && vue-cli-service build --target lib --name vue-collapsible-panel ./src/install.js && rm dist/demo.html",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -35,5 +62,6 @@
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  }
+  },
+  "private": false
 }

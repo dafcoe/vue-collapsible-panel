@@ -10,7 +10,6 @@ import {
   onMounted,
 } from 'vue'
 import { enableAccordion } from '@/components/composables/vue-collapsible-panel.store'
-import '../assets/styles/styles.scss'
 
 export default defineComponent({
   name: 'VueCollapsiblePanelGroup',
