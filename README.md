@@ -1,11 +1,8 @@
-<div style="text-align: center">
-
 ![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.gif?raw=true)
 
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-collapsible-panel?style=flat-square)
-</div>
 
 # @dafcoe/vue-collapsible-panel
 Easy to use, customizable collapsible panel / accordion library built using Vue3.
@@ -39,7 +36,7 @@ Use it in the template as follows:
 <VueCollapsiblePanelGroup>
     <VueCollapsiblePanel>
         <template #title>
-            Panel A Header
+            Panel A Title
         </template>
         <template #content>
             Panel A Content
@@ -47,7 +44,7 @@ Use it in the template as follows:
     </VueCollapsiblePanel>
     <VueCollapsiblePanel>
         <template #title>
-            Panel B Header
+            Panel B Title
         </template>
         <template #content>
             Panel B Content
