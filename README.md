@@ -1,10 +1,11 @@
-<p align="center">
-![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.png?raw=true)
-<br>
+<div style="text-align: center">
+
+![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.gif?raw=true)
+
 ![npm bundle size](https://img.shields.io/bundlephobia/min/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-collapsible-panel?style=flat-square)
-</p>
+</div>
 
 # @dafcoe/vue-collapsible-panel
 Easy to use, customizable collapsible panel / accordion library built using Vue3.
@@ -79,5 +80,5 @@ By default, all the panels are expanded. To prevent this, add `:expanded="false"
 </VueCollapsiblePanelGroup>
 ```
 
-### License
+## License
 [MIT License](https://opensource.org/licenses/MIT) © [Daf Coe](mailto:dafcoe@gmail.com)
