@@ -40,6 +40,7 @@ export default defineComponent({
     border-radius: 4px;
     color: lighten($base-color, 5);
     box-shadow: $shadow-color 0 0 16px 0;
+    width: 100%;
 
     ::v-deep(.vcp) {
       * {
