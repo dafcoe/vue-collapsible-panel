@@ -67,7 +67,7 @@ By default, all the panels are expanded. To prevent this, add `:expanded="false"
 <VueCollapsiblePanelGroup>
     <VueCollapsiblePanel :expanded="false">
         <template #title>
-            Panel A Header
+            Panel A Title
         </template>
         <template #content>
             Panel A Content
