@@ -54,7 +54,8 @@ Use it in the template as follows:
 </VueCollapsiblePanelGroup>
 ```
 
-#### Options
+## Options
+#### Accordion
 By default, the accordion behaviour is not used. To use it, add the `accordion` on `VueCollapsiblePanelGroup`:
 ```html
 <VueCollapsiblePanelGroup accordion>
@@ -62,6 +63,7 @@ By default, the accordion behaviour is not used. To use it, add the `accordion` 
 </VueCollapsiblePanelGroup>
 ```
 
+#### Expanded
 By default, all the panels are expanded. To prevent this, add `:expanded="false"` on `VueCollapsiblePanel`:
 ```html
 <VueCollapsiblePanelGroup>
@@ -76,6 +78,22 @@ By default, all the panels are expanded. To prevent this, add `:expanded="false"
     ...
 </VueCollapsiblePanelGroup>
 ```
+
+#### Colors
+The default base hex color is `#333`. To change this, add `base-color="#<color>"` on `VueCollpasiblePanelGroup`:
+```html
+<VueCollapsiblePanelGroup base-color="#0035a0">
+    ...
+</VueCollapsiblePanelGroup>
+```
+For granular control over the colors, the following css variables can be overridden:
+````css
+--base-color
+--border-color
+--bg-color-header
+--bg-color-header-hover
+--bg-color-header-active
+````
 
 ## License
 [MIT License](https://opensource.org/licenses/MIT) © [Daf Coe](mailto:dafcoe@gmail.com)
