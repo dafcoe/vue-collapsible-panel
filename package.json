@@ -1,6 +1,6 @@
 {
   "name": "@dafcoe/vue-collapsible-panel",
-  "version": "0.1.24",
+  "version": "0.1.26",
   "description": "Collapsible Panel / Accordion Using Vue3",
   "keywords": [
     "collapsible panel",
@@ -19,7 +19,9 @@
     "name": "Daf Coe",
     "email": "dafcoe@gmail.com"
   },
-  "files": ["dist/*"],
+  "files": [
+    "dist/*"
+  ],
   "main": "dist/vue-collapsible-panel.common.js",
   "module": "dist/vue-collapsible-panel.common.js",
   "unpkg": "dist/vue-collapsible-panel.umd.min.js",
@@ -35,7 +37,7 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
-  "peerDependencies": {
+  "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
