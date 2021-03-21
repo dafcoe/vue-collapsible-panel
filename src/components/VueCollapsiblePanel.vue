@@ -1,5 +1,6 @@
 <template>
   <section
+    ref="panelRef"
     class="vcp"
     :class="{
       'vcp--expanded': isExpanded,
@@ -58,10 +59,7 @@ import {
 } from 'vue'
 import { VNodeArrayChildren } from '@vue/runtime-core'
 import { toggleIcon } from '@/components/vue-collapsible-panel.constant'
-import {
-  state,
-  togglePanel,
-} from '@/components/composables/vue-collapsible-panel.store'
+import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
 
 export default defineComponent({
   name: 'VueCollapsiblePanel',
@@ -72,9 +70,15 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const idPanel = Date.now()
+    const idPanel = `panel-${Date.now()}`
+    const panelRef = ref<HTMLElement>()
     const bodyRef = ref<HTMLElement>()
     const bodyContentRef = ref<HTMLElement>()
+    const {
+      panelExpanded,
+      togglePanelExpandedStatus,
+      setPanelExpandedStatus,
+    } = useCollapsiblePanelStore()
 
     const body = computed(
       () => ({
@@ -83,14 +87,18 @@ export default defineComponent({
       }),
     )
 
+    const idGroup = computed(() => {
+      return panelRef.value?.parentElement?.getAttribute('data-id-group') || ''
+    })
+
     const isExpanded = computed(
-      () => props.expanded && (state.expandedMap[idPanel] || false) && body.value.hasContent,
+      () => panelExpanded(idGroup.value, idPanel).value && body.value.hasContent,
     )
 
     const toggle = (): void => {
       if (!body.value.hasContent) return
 
-      togglePanel(idPanel)
+      togglePanelExpandedStatus(idGroup.value, idPanel)
     }
 
     const collapse = (element: HTMLElement): void => {
@@ -110,7 +118,7 @@ export default defineComponent({
     }
 
     onMounted(() => {
-      state.expandedMap[idPanel] = props.expanded
+      setPanelExpandedStatus(idGroup.value, idPanel, props.expanded)
     })
 
     onUpdated(() => {
@@ -119,6 +127,7 @@ export default defineComponent({
 
     return {
       body,
+      panelRef,
       bodyRef,
       bodyContentRef,
       isExpanded,

@@ -1,27 +1,59 @@
-import { reactive } from 'vue'
+import {
+  computed,
+  reactive,
+} from 'vue'
+import { VueCollapsiblePanelGroupState } from '@/components/vue-collapsible-panel.interface'
 
-// State
-export const state = reactive({
-  accordion: false,
-  expandedMap: {} as Record<string, boolean>,
+const state = reactive({
+  panelGroups: {} as Record<string, VueCollapsiblePanelGroupState>,
 })
 
-// Mutations
-export const enableAccordion = (): void => {
-  state.accordion = true
-}
+export const useCollapsiblePanelStore = () => {
+  const useGroupAccordion = (idGroup: string) => computed(
+    () => state.panelGroups[idGroup].accordion,
+  )
 
-export const togglePanel = (idPanel: number | string): void => {
-  if (!state.accordion) {
-    state.expandedMap[idPanel] = !state.expandedMap[idPanel]
-    return
+  const setGroupAccordionStatus = (idGroup: string, status: boolean) => {
+    state.panelGroups[idGroup] = {
+      ...state.panelGroups[idGroup],
+      accordion: status,
+    }
   }
 
-  if (!state.expandedMap[idPanel]) {
-    Object.keys(state.expandedMap).forEach(
-      (key) => { state.expandedMap[key] = false },
-    )
+  const panelExpanded = (idGroup: string, idPanel: string) => computed(
+    () => state.panelGroups[idGroup]?.panelExpandStatus?.[idPanel] || false,
+  )
+
+  const setPanelExpandedStatus = (idGroup: string, idPanel: string, status: boolean) => {
+    state.panelGroups[idGroup] = {
+      ...state.panelGroups[idGroup],
+      panelExpandStatus: {
+        ...state.panelGroups[idGroup]?.panelExpandStatus || {},
+        [idPanel]: status,
+      },
+    }
   }
 
-  state.expandedMap[idPanel] = !state.expandedMap[idPanel]
+  const togglePanelExpandedStatus = (idGroup: string, idPanel: string): void => {
+    if (!state.panelGroups[idGroup].accordion) {
+      state.panelGroups[idGroup].panelExpandStatus[idPanel] = !state.panelGroups[idGroup].panelExpandStatus[idPanel]
+      return
+    }
+
+    if (!state.panelGroups[idGroup].panelExpandStatus[idPanel]) {
+      Object.keys(state.panelGroups[idGroup].panelExpandStatus).forEach(
+        (key) => { state.panelGroups[idGroup].panelExpandStatus[key] = false },
+      )
+    }
+
+    state.panelGroups[idGroup].panelExpandStatus[idPanel] = !state.panelGroups[idGroup].panelExpandStatus[idPanel]
+  }
+
+  return {
+    useGroupAccordion,
+    setGroupAccordionStatus,
+    panelExpanded,
+    setPanelExpandedStatus,
+    togglePanelExpandedStatus,
+  }
 }

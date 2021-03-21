@@ -1,5 +1,8 @@
 <template>
-  <div class="vcpg">
+  <div
+    class="vcpg"
+    :data-id-group="idGroup"
+  >
     <slot />
   </div>
 </template>
@@ -7,9 +10,9 @@
 <script lang="ts">
 import {
   defineComponent,
-  onMounted,
+  ref,
 } from 'vue'
-import { enableAccordion } from '@/components/composables/vue-collapsible-panel.store'
+import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
 
 export default defineComponent({
   name: 'VueCollapsiblePanelGroup',
@@ -20,9 +23,14 @@ export default defineComponent({
     },
   },
   setup(props) {
-    onMounted(() => {
-      if (props.accordion) enableAccordion()
-    })
+    const idGroup = ref(`group-${Date.now()}`)
+    const { setGroupAccordionStatus } = useCollapsiblePanelStore()
+
+    setGroupAccordionStatus(idGroup.value, props.accordion)
+
+    return {
+      idGroup,
+    }
   },
 })
 </script>
