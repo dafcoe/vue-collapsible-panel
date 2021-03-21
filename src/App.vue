@@ -27,7 +27,10 @@
       </VueCollapsiblePanel>
     </VueCollapsiblePanelGroup>
 
-    <VueCollapsiblePanelGroup accordion>
+    <VueCollapsiblePanelGroup
+      accordion
+      base-color="#0035a0"
+    >
       <VueCollapsiblePanel>
         <template #title>
           Panel A
@@ -88,5 +91,6 @@ export default defineComponent({
     line-height: 1.5;
     max-width: 500px;
     margin: 180px auto;
+    color: #333;
   }
 </style>

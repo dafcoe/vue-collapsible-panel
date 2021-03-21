@@ -1,7 +1,8 @@
 <template>
   <div
-    class="vcpg"
     :data-id-group="idGroup"
+    :style="cssColorVars"
+    class="vcpg"
   >
     <slot />
   </div>
@@ -13,6 +14,7 @@ import {
   ref,
 } from 'vue'
 import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
+import { lightenDarkenColor } from '@/utils/color.util'
 
 export default defineComponent({
   name: 'VueCollapsiblePanelGroup',
@@ -21,33 +23,37 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    baseColor: {
+      type: String,
+      default: '#333333',
+    },
   },
   setup(props) {
     const idGroup = ref(`group-${Date.now()}`)
     const { setGroupAccordionStatus } = useCollapsiblePanelStore()
+    const cssColorVars = {
+      '--base-color': props.baseColor,
+      '--border-color': lightenDarkenColor(props.baseColor, 160),
+      '--bg-color-header': lightenDarkenColor(props.baseColor, 170),
+      '--bg-color-header-hover': lightenDarkenColor(props.baseColor, 175),
+      '--bg-color-header-active': lightenDarkenColor(props.baseColor, 170),
+    }
 
     setGroupAccordionStatus(idGroup.value, props.accordion)
 
     return {
       idGroup,
+      cssColorVars,
     }
   },
 })
 </script>
 
 <style lang="scss" scoped>
-  $base-color: #333;
-  $border-color: lighten($base-color, 65);
-  $bg-color-header: lighten($base-color, 75);
-  $bg-color-header-hover: lighten($base-color, 70);
-  $bg-color-header-active: lighten($base-color, 65);
-  $shadow-color: lighten($base-color, 65);
-
   .vcpg {
-    border: 1px solid $border-color;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    color: lighten($base-color, 5);
-    box-shadow: $shadow-color 0 0 16px 0;
+    box-shadow: #ddd 0 0 16px 0;
     width: 100%;
 
     ::v-deep(.vcp) {
@@ -56,26 +62,22 @@ export default defineComponent({
       }
 
       &__header {
-        background-color: $bg-color-header;
+        background-color: var(--bg-color-header);
         height: 46px;
         transition: background-color .3s ease;
 
-        &:not(:first-of-type) {
-          border-top: 10px solid red;
-        }
-
         &:hover {
-          background-color: $bg-color-header-hover;
+          background-color: var(--bg-color-header-hover);
         }
 
         &:active {
-          background-color: $bg-color-header-active;
+          background-color: var(--bg-color-header-active);
         }
       }
 
       &:not(:first-of-type) {
         .vcp__header {
-          border-top: 1px solid $border-color;
+          border-top: 1px solid var(--border-color);
         }
       }
 
@@ -84,7 +86,7 @@ export default defineComponent({
       }
 
       &__body {
-        border-top: 1px solid $border-color;
+        border-top: 1px solid var(--border-color);
       }
     }
   }
