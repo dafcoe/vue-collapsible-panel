@@ -62,7 +62,7 @@ Use it in the template as follows:
 
 ## Options
 #### Accordion
-By default, the accordion behaviour is not used. To use it, add the `accordion` on `VueCollapsiblePanelGroup`:
+By default, the accordion behaviour is not used. To use it, add the `accordion` on `vue-collapsible-panel-group`:
 ```html
 <vue-collapsible-panel-group accordion>
     ...
@@ -70,7 +70,7 @@ By default, the accordion behaviour is not used. To use it, add the `accordion` 
 ```
 
 #### Expanded
-By default, all the panels are expanded. To prevent this, add `:expanded="false"` on `VueCollapsiblePanel`:
+By default, all the panels are expanded. To prevent this, add `:expanded="false"` on `vue-collapsible-panel`:
 ```html
 <vue-collapsible-panel-group>
     <vue-collapsible-panel :expanded="false">
@@ -86,7 +86,7 @@ By default, all the panels are expanded. To prevent this, add `:expanded="false"
 ```
 
 #### Colors
-The default base hex color is `#333`. To change this, add `base-color="#<color>"` on `VueCollpasiblePanelGroup`:
+The default base hex color is `#333`. To change this, add `base-color="#<color>"` on `vue-collpasible-panel-group`:
 ```html
 <vue-collapsible-panel-group base-color="#0035a0">
     ...
