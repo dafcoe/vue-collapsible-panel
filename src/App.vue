@@ -1,61 +1,61 @@
 <template>
   <div class="wrapper">
-    <VueCollapsiblePanelGroup>
-      <VueCollapsiblePanel>
+    <vue-collapsible-panel-group>
+      <vue-collapsible-panel>
         <template #title>
           Panel A
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-      <VueCollapsiblePanel>
+      </vue-collapsible-panel>
+      <vue-collapsible-panel>
         <template #title>
           Panel B
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-      <VueCollapsiblePanel>
+      </vue-collapsible-panel>
+      <vue-collapsible-panel>
         <template #title>
           Panel C
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-    </VueCollapsiblePanelGroup>
+      </vue-collapsible-panel>
+    </vue-collapsible-panel-group>
 
-    <VueCollapsiblePanelGroup
+    <vue-collapsible-panel-group
       accordion
-      base-color="#0035a0"
+      base-color="#111111"
     >
-      <VueCollapsiblePanel>
+      <vue-collapsible-panel>
         <template #title>
           Panel A
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-      <VueCollapsiblePanel :expanded="false">
+      </vue-collapsible-panel>
+      <vue-collapsible-panel :expanded="false">
         <template #title>
           Panel B
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-      <VueCollapsiblePanel :expanded="false">
+      </vue-collapsible-panel>
+      <vue-collapsible-panel :expanded="false">
         <template #title>
           Panel C
         </template>
         <template #content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat. Nam massa enim, mattis vitae risus in, sagittis placerat sapien. Maecenas vitae ligula et turpis hendrerit hendrerit.
         </template>
-      </VueCollapsiblePanel>
-    </VueCollapsiblePanelGroup>
+      </vue-collapsible-panel>
+    </vue-collapsible-panel-group>
   </div>
 </template>
 
