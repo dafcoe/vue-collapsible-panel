@@ -1,6 +1,6 @@
 {
   "name": "@dafcoe/vue-collapsible-panel",
-  "version": "0.1.29",
+  "version": "0.1.31",
   "description": "Collapsible Panel / Accordion Using Vue3",
   "keywords": [
     "collapsible panel",
@@ -67,4 +67,5 @@
   },
   "private": false
 }
+
 
