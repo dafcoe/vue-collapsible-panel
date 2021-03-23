@@ -5,7 +5,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-collapsible-panel?style=flat-square)
 
 # @dafcoe/vue-collapsible-panel
-Easy to use, customizable collapsible panel / accordion library built using Vue3.
+Easy to use, customisable collapsible panel / accordion library built using Vue3.
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
