@@ -1,11 +1,13 @@
-![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.gif?raw=true)
+[![@dafcoe/vue-collapsible-panel sample](https://github.com/dafcoe/vue-collapsible-panel/blob/main/src/assets/images/sample.gif?raw=true)](https://dafcoe.github.io/vue-collapsible-panel)
 
-![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-collapsible-panel)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![npm](https://img.shields.io/npm/dt/@dafcoe/vue-collapsible-panel?style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dafcoe/vue-collapsible-panel?style=flat-square)
 
 # @dafcoe/vue-collapsible-panel
 Easy to use, customisable collapsible panel / accordion library built using Vue3.
+<br>
+See it action on [demo](https://dafcoe.github.io/vue-colapsible-panel) page.
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
@@ -99,6 +101,7 @@ For granular control over the colors, the following css variables can be overrid
 --bg-color-header
 --bg-color-header-hover
 --bg-color-header-active
+--bg-color-body
 ````
 
 ## License
