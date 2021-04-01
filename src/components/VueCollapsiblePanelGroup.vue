@@ -37,6 +37,7 @@ export default defineComponent({
       '--bg-color-header': lightenDarkenColor(props.baseColor, 170),
       '--bg-color-header-hover': lightenDarkenColor(props.baseColor, 175),
       '--bg-color-header-active': lightenDarkenColor(props.baseColor, 170),
+      '--bg-color-body': '#fff',
     }
 
     setGroupAccordionStatus(idGroup.value, props.accordion)
@@ -53,7 +54,6 @@ export default defineComponent({
   .vcpg {
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    box-shadow: #ddd 0 0 16px 0;
     width: 100%;
 
     ::v-deep(.vcp) {
@@ -87,6 +87,7 @@ export default defineComponent({
 
       &__body {
         border-top: 1px solid var(--border-color);
+        background-color: var(--bg-color-body);
       }
     }
   }

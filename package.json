@@ -12,7 +12,7 @@
   "homepage": "https://github.com/dafcoe/vue-collapsible-panel",
   "bugs": {
     "url": "https://github.com/dafcoe/vue-collapsible-panel/issues",
-    "email": "dafcoe+vcp@gmail.com"
+    "email": "dafcoe@gmail.com"
   },
   "license": "MIT",
   "author": {
@@ -32,7 +32,7 @@
   },
   "scripts": {
     "build:dev": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
+    "build:prod": "vue-cli-service build --dest docs",
     "build:lib": "rm -rf dist && vue-cli-service build --target lib --name vue-collapsible-panel ./src/install.js && rm dist/demo.html",
     "lint": "vue-cli-service lint"
   },
