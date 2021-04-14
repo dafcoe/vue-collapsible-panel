@@ -49,6 +49,7 @@
 </template>
 
 <script lang="ts">
+import { v4 as uuid } from 'uuid'
 import {
   computed,
   defineComponent,
@@ -70,7 +71,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const idPanel = `panel-${Date.now()}`
+    const idPanel = `panel-${uuid()}`
     const panelRef = ref<HTMLElement>()
     const bodyRef = ref<HTMLElement>()
     const bodyContentRef = ref<HTMLElement>()
@@ -83,7 +84,7 @@ export default defineComponent({
     const body = computed(
       () => ({
         hasContent: context.slots.content && (context.slots.content()[0].children as VNodeArrayChildren).length > 0,
-        dataKey: Date.now(),
+        dataKey: uuid(),
       }),
     )
 

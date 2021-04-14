@@ -58,5 +58,9 @@
     "typescript": "~3.9.3",
     "vue": "^3.0.0"
   },
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "uuid": "^8.3.2"
+  }
 }
