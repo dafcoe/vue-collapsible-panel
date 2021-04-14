@@ -9,6 +9,7 @@
 </template>
 
 <script lang="ts">
+import { v4 as uuid } from 'uuid'
 import {
   defineComponent,
   ref,
@@ -29,7 +30,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const idGroup = ref(`group-${Date.now()}`)
+    const idGroup = ref(`group-${uuid()}`)
     const { setGroupAccordionStatus } = useCollapsiblePanelStore()
     const cssColorVars = {
       '--base-color': props.baseColor,
