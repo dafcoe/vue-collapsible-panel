@@ -36,6 +36,10 @@
     "build:lib": "rm -rf dist && vue-cli-service build --target lib --name vue-collapsible-panel ./src/install.js && rm dist/demo.html",
     "lint": "vue-cli-service lint"
   },
+  "dependencies": {
+    "@types/uuid": "^8.3.0",
+    "uuid": "^8.3.2"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
@@ -58,9 +62,5 @@
     "typescript": "~3.9.3",
     "vue": "^3.0.0"
   },
-  "private": false,
-  "dependencies": {
-    "@types/uuid": "^8.3.0",
-    "uuid": "^8.3.2"
-  }
+  "private": false
 }
