@@ -7,7 +7,7 @@
 # @dafcoe/vue-collapsible-panel
 Easy to use, customisable collapsible panel / accordion library built using Vue3.
 <br>
-See it action on [demo](https://dafcoe.github.io/vue-colapsible-panel) page.
+See it action on [demo](https://dafcoe.github.io/vue-collapsible-panel) page.
 
 ## Installation
 Install the package as a project dependency using `yarn` or `npm`:
