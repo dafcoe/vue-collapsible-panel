@@ -59,6 +59,41 @@
           </template>
         </vue-collapsible-panel>
       </vue-collapsible-panel-group>
+
+      <vue-collapsible-panel-group
+        accordion
+        border-color="#FFFF01"
+        base-color="#0000FF"
+        bg-color-header="#66ff66"
+        bg-color-header-hover="#00ff00"
+        bg-color-header-active="#00ffff"
+        bg-color-body="#ffaaaa"
+      >
+        <vue-collapsible-panel :expanded="false">
+          <template #title>
+            Panel 1
+          </template>
+          <template #content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat.
+          </template>
+        </vue-collapsible-panel>
+        <vue-collapsible-panel :expanded="false">
+          <template #title>
+            Panel 2
+          </template>
+          <template #content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat.
+          </template>
+        </vue-collapsible-panel>
+        <vue-collapsible-panel :expanded="false">
+          <template #title>
+            Panel 3
+          </template>
+          <template #content>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis purus quis leo efficitur, egestas varius justo rhoncus. Nunc a pulvinar metus. Nunc mollis viverra varius. Fusce varius nunc ante, eget congue sem tristique sagittis. Aliquam erat volutpat.
+          </template>
+        </vue-collapsible-panel>
+      </vue-collapsible-panel-group>
     </div>
 
     <div class="bottom-links">
@@ -153,7 +188,7 @@ export default defineComponent({
 
     .vcpg {
       margin: 0 10px;
-      width: 500px;
+      width: 350px;
     }
   }
 

@@ -4,7 +4,9 @@ const normalizedPartialColor = (partial: number): number => {
   return partial
 }
 
-export const lightenDarkenColor = (hexColor: string, amount: number) => {
+export const lightenDarkenColor = (paramHexColor: string, hexColor: string, amount: number) => {
+  if (paramHexColor) return paramHexColor
+
   const color = hexColor.replace('#', '')
   const colorNumber = parseInt(color, 16)
 
@@ -12,5 +14,5 @@ export const lightenDarkenColor = (hexColor: string, amount: number) => {
   const blue = normalizedPartialColor(((colorNumber >> 8) & 0x00FF) + amount)
   const green = normalizedPartialColor((colorNumber & 0x0000FF) + amount)
 
-  return '#' + (green | (blue << 8) | (red << 16)).toString(16)
+  return `#${(green | (blue << 8) | (red << 16)).toString(16)}`
 }

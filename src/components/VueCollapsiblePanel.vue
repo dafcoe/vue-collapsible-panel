@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import { v4 as uuid } from 'uuid'
+import { nanoid, customAlphabet } from 'nanoid'
 import {
   computed,
   defineComponent,
@@ -62,6 +62,8 @@ import { VNodeArrayChildren } from '@vue/runtime-core'
 import { toggleIcon } from '@/components/vue-collapsible-panel.constant'
 import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
 
+customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789_ABCDEFGHIJKLMNOPQRSTUVWXYZ', 21)
+
 export default defineComponent({
   name: 'VueCollapsiblePanel',
   props: {
@@ -71,7 +73,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const idPanel = `panel-${uuid()}`
+    const idPanel = `panel-${nanoid()}`
     const panelRef = ref<HTMLElement>()
     const bodyRef = ref<HTMLElement>()
     const bodyContentRef = ref<HTMLElement>()
@@ -84,7 +86,7 @@ export default defineComponent({
     const body = computed(
       () => ({
         hasContent: context.slots.content && (context.slots.content()[0].children as VNodeArrayChildren).length > 0,
-        dataKey: uuid(),
+        dataKey: nanoid(),
       }),
     )
 
@@ -150,6 +152,7 @@ export default defineComponent({
       display: flex;
       padding: 12px;
       pointer-events: none;
+      overflow: hidden;
 
       #{$root}--expandable & {
         pointer-events: auto;

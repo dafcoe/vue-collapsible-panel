@@ -9,13 +9,15 @@
 </template>
 
 <script lang="ts">
-import { v4 as uuid } from 'uuid'
+import { nanoid, customAlphabet } from 'nanoid'
 import {
   defineComponent,
   ref,
 } from 'vue'
 import { useCollapsiblePanelStore } from '@/components/composables/vue-collapsible-panel.store'
 import { lightenDarkenColor } from '@/utils/color.util'
+
+customAlphabet('abcdefghijklmnopqrstuvwxyz0123456789_ABCDEFGHIJKLMNOPQRSTUVWXYZ', 21)
 
 export default defineComponent({
   name: 'VueCollapsiblePanelGroup',
@@ -28,17 +30,37 @@ export default defineComponent({
       type: String,
       default: '#333333',
     },
+    borderColor: {
+      type: String,
+      default: null,
+    },
+    bgColorHeader: {
+      type: String,
+      default: null,
+    },
+    bgColorHeaderHover: {
+      type: String,
+      default: null,
+    },
+    bgColorHeaderActive: {
+      type: String,
+      default: null,
+    },
+    bgColorBody: {
+      type: String,
+      default: '#fff',
+    },
   },
   setup(props) {
-    const idGroup = ref(`group-${uuid()}`)
+    const idGroup = ref(`group-${nanoid()}`)
     const { setGroupAccordionStatus } = useCollapsiblePanelStore()
     const cssColorVars = {
       '--base-color': props.baseColor,
-      '--border-color': lightenDarkenColor(props.baseColor, 160),
-      '--bg-color-header': lightenDarkenColor(props.baseColor, 170),
-      '--bg-color-header-hover': lightenDarkenColor(props.baseColor, 175),
-      '--bg-color-header-active': lightenDarkenColor(props.baseColor, 170),
-      '--bg-color-body': '#fff',
+      '--border-color': lightenDarkenColor(props.borderColor, props.baseColor, 160),
+      '--bg-color-header': lightenDarkenColor(props.bgColorHeader, props.baseColor, 170),
+      '--bg-color-header-hover': lightenDarkenColor(props.bgColorHeaderHover, props.baseColor, 175),
+      '--bg-color-header-active': lightenDarkenColor(props.bgColorHeaderActive, props.baseColor, 170),
+      '--bg-color-body': lightenDarkenColor(props.bgColorBody, '#fff', 0),
     }
 
     setGroupAccordionStatus(idGroup.value, props.accordion)
